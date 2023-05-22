@@ -3,11 +3,17 @@ def admin_login(username, password):
     # your code here
     if username == "sudo" and password == "12345":
         return "Access denied"
-    elif username == "admin" or username == "ADMIN" and password == "12345":
+    elif username == "ADMIN" or username == "admin" and password == "12345":
         return "Access granted"
+    elif username != "admin" or password != "12345":
+        return "Access denied"
+    
+    
 admin_login("sudo", "12345")
 admin_login("admin", "12345")
 admin_login("ADMIN", "12345")
+admin_login("admin", "sudo")
+
 
 def hows_the_weather(temperature):
     # your code here
@@ -32,9 +38,9 @@ def fizzbuzz(num):
     if num % 3 == 0 and num % 5 != 0:
         return "Fizz"
     elif num % 5 == 0 and num % 3 != 0 :
-        return "Buzz"
+        return ("Buzz")
     elif num % 5 == 0 and num % 3 == 0 :
-        return "FizzBuz"
+        return "FizzBuzz"
     else:
         return num
 fizzbuzz(1)
@@ -42,8 +48,9 @@ fizzbuzz(2)
 fizzbuzz(3)
 fizzbuzz(4)
 fizzbuzz(5)
-fizzbuzz(15)    
-fizzbuzz(15)    
+
+fizzbuzz(15)
+     
 """
 Write a function calculator() that takes three arguments: an operation and two numbers.
  If the operation is one of the following: +, -, *, or /, return the value of calling the operation on the two numbers. 
@@ -61,7 +68,7 @@ def calculator(operation, num1, num2):
     elif operation == "/":
         return num1 / num2
     else:
-        return "Invalid operetion!"
+        print("Invalid operation!")
     
 calculator("+", 1, 1)
 calculator("-", 3, 1)
